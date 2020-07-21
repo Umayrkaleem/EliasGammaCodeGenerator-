@@ -1,0 +1,64 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/umayr/Documents/Rincon 3360/Assignment_2/client.cpp
+unistd.h
+-
+iostream
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+netdb.h
+-
+string
+-
+algorithm
+-
+pthread.h
+-
+vector
+-
+fstream
+-
+
+/Users/umayr/Documents/Rincon 3360/Assignment_2/server.cpp
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+sys/wait.h
+-
+netinet/in.h
+-
+string
+-
+iostream
+-
+cstring
+-
+
