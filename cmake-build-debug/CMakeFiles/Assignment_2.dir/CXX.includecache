@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/umayr/Documents/Rincon 3360/Assignment_2/client.cpp
+/Users/umayr/Documents/EliasGammaCodeGenerator/client.cpp
 unistd.h
 -
 iostream
@@ -36,7 +36,7 @@ vector
 fstream
 -
 
-/Users/umayr/Documents/Rincon 3360/Assignment_2/server.cpp
+/Users/umayr/Documents/EliasGammaCodeGenerator/server.cpp
 unistd.h
 -
 stdio.h
@@ -60,5 +60,9 @@ string
 iostream
 -
 cstring
+-
+bitset
+-
+cmath
 -
 

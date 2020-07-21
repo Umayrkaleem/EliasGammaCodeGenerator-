@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/umayr/Documents/Rincon 3360/Assignment_2/client.cpp" "/Users/umayr/Documents/Rincon 3360/Assignment_2/cmake-build-debug/CMakeFiles/Assignment_2.dir/client.cpp.o"
-  "/Users/umayr/Documents/Rincon 3360/Assignment_2/server.cpp" "/Users/umayr/Documents/Rincon 3360/Assignment_2/cmake-build-debug/CMakeFiles/Assignment_2.dir/server.cpp.o"
+  "/Users/umayr/Documents/EliasGammaCodeGenerator/client.cpp" "/Users/umayr/Documents/EliasGammaCodeGenerator/cmake-build-debug/CMakeFiles/Assignment_2.dir/client.cpp.o"
+  "/Users/umayr/Documents/EliasGammaCodeGenerator/server.cpp" "/Users/umayr/Documents/EliasGammaCodeGenerator/cmake-build-debug/CMakeFiles/Assignment_2.dir/server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

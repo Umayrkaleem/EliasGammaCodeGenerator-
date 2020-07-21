@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
     clilen = sizeof(cli_addr);
     signal(SIGCHLD, fireman);
     while (1) {
+        char buffer[256];
         bzero(buffer,256);
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, (socklen_t*)& clilen);
         if (newsockfd < 0)
@@ -65,24 +66,16 @@ int main(int argc, char *argv[])
         if (pid < 0)
             error("ERROR on fork");
         if (pid == 0)  {
-            //cout << "sockfd: " << sockfd << endl;
-            //cout << "newsockfd " << newsockfd << endl;
-            //close(sockfd);
             binaryGenerator(newsockfd);
             close(newsockfd);
             _exit(0);
         }
         else
             close(newsockfd);
-    } /* end of while */
-    return 0; /* we never get here */
+    }
+    return 0;
 }
 
-/*****************************
- There is a separate instance of this function
- for each connection.  It handles all communication
- once a connnection has been established.
- *****************************************/
 void binaryGenerator (int sock)
 {
     int n;
@@ -132,18 +125,3 @@ void binaryGenerator (int sock)
     if (n < 0)
         error("ERROR writing to socket");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

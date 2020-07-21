@@ -49,11 +49,8 @@ public:
         head = NULL;
     }
     void ReceiveLetter(string letter);
-    void bubbleSORT();
-    void swap(node* a, node* b);
-    void add2freq(char letter);
-    string Gimme();
-    void print();
+
+
 
 };
 void LL::ReceiveLetter(string letter)
@@ -86,18 +83,7 @@ void LL::ReceiveLetter(string letter)
         }
     }
 }
-string LL::Gimme(){
-    if (head == NULL) { return NULL; }
 
-    string Prioritykey = "";
-    node* curr = head;
-    while (curr != NULL)
-    {
-        Prioritykey += curr->x;
-        curr = curr->next;
-    }
-    return Prioritykey;
-}
 
 void *pthread_funct( void* char_ptr)
 {
