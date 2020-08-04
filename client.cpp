@@ -49,8 +49,11 @@ public:
         head = NULL;
     }
     void ReceiveLetter(string letter);
-
-
+    void bubbleSORT();
+    void swap(node* a, node* b);
+    void add2freq(char letter);
+    string Gimme();
+    void print();
 
 };
 void LL::ReceiveLetter(string letter)
@@ -124,7 +127,6 @@ void *pthread_funct( void* char_ptr)
     n = read(sockfd,buffer,255);
 
     if (n < 0) {
-        cout << " buffer: " << buffer << endl;
         error("ERROR reading from socket ");
     }
     charrrr_ptr->code = buffer;
@@ -152,7 +154,6 @@ int main(int argc, char *argv[])
 
     LL o;
     int count = 0;
-    //cout << "firstInput : " << firstInput << endl;
 
     for (int i = 0; i < valueString.size(); i++) {
         o.ReceiveLetter(valueString[i]);

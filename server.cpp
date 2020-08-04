@@ -57,8 +57,6 @@ int main(int argc, char *argv[])
     clilen = sizeof(cli_addr);
     signal(SIGCHLD, fireman);
     while (1) {
-        char buffer[256];
-        bzero(buffer,256);
         newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, (socklen_t*)& clilen);
         if (newsockfd < 0)
             error("ERROR on accept");
@@ -66,16 +64,22 @@ int main(int argc, char *argv[])
         if (pid < 0)
             error("ERROR on fork");
         if (pid == 0)  {
+
             binaryGenerator(newsockfd);
             close(newsockfd);
             _exit(0);
         }
         else
             close(newsockfd);
-    }
-    return 0;
+    } /* end of while */
+    return 0; /* we never get here */
 }
 
+/*****************************
+ There is a separate instance of this function
+ for each connection.  It handles all communication
+ once a connnection has been established.
+ *****************************************/
 void binaryGenerator (int sock)
 {
     int n;
@@ -85,17 +89,15 @@ void binaryGenerator (int sock)
     n = read(sock,buffer,255);
     if (n < 0) error("ERROR reading from socket");
 
-    string message(buffer);
-    string message_two = "";
     string key = "";
     string bit = "";
-
-
     int nn = stoi(buffer);
     bitset<12> x(nn);
     string holder = " ";
+
     bit = x.to_string<char, string::traits_type, std::string::allocator_type>();
     int sizebit = bit.length();
+
 
     int bitLength = bit.length();
     for (int i =0; i<bitLength; i++) {
@@ -121,7 +123,23 @@ void binaryGenerator (int sock)
         buffer[i] = s[i];
     }
 
+
     n = write(sock, buffer, strlen(buffer));
     if (n < 0)
         error("ERROR writing to socket");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
