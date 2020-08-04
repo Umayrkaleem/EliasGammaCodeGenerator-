@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
@@ -11,7 +10,6 @@
 #include <algorithm>
 #include <pthread.h>
 #include <vector>
-#include <fstream>
 
 using namespace std;
 
